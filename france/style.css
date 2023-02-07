@@ -1,0 +1,60 @@
+body{
+    background: linear-gradient(120deg, #000046, #1CB5E0 );
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1{
+    text-align: center;
+    color: aliceblue;
+}
+
+
+.map{
+    width: 50%
+}
+path{
+    fill: rgb(125, 171, 161);
+    stroke: white;
+    stroke-width: 1px;
+    transition: fill 0.2s;
+}
+
+#FR-GES:hover{
+    fill:rgb(17, 111, 198)
+}
+#FR-NAQ:hover{
+    fill:rgb(186, 198, 17)
+}
+#FR-ARA:hover{
+    fill:rgb(155, 78, 199)
+}
+#FR-BFC:hover{
+    fill:rgb(228, 85, 85)
+}
+#FR-BRE:hover{
+    fill:rgb(55, 102, 60)
+}
+#FR-CVL:hover{
+    fill:rgb(122, 122, 122)
+}
+#FR-COR:hover{
+    fill:rgb(90, 51, 196)
+}
+#FR-IDF:hover{
+    fill:rgb(255, 93, 250)
+}
+#FR-OCC:hover{
+    fill:rgb(17, 198, 68)
+}
+#FR-HDF:hover{
+    fill:rgb(212, 134, 60)
+}
+#FR-NOR:hover{
+    fill:rgb(39, 210, 210)
+}
+#FR-PDL:hover{
+    fill:rgb(145, 121, 69)
+}
+#FR-PAC:hover{
+    fill:rgb(121, 84, 87)
+}
