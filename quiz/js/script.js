@@ -39,7 +39,7 @@ function showQuestions(id) {
     question.innerHTML = ques;
     options.innerHTML = option;
 
-    for (i = 0; i < opt.length; i++) {
+    for (i = 0; i <= opt.length; i++) {
         opt[i].setAttribute("onclick", "optionSelected(this)");
     }
 }
