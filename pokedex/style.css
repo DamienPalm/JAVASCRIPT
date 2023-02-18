@@ -1,0 +1,52 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background: repeating-linear-gradient(120deg,
+            #2f2f2f,
+            #2f2f2f 50px,
+            #323232 50px,
+            #323232 100px);
+}
+
+.container {
+    min-height: 100vh;
+    background: repeating-linear-gradient(120deg,
+            #ffffff,
+            #ffffff 50px,
+            #f5f5f5 50px,
+            #f5f5f5 100px);
+}
+
+.card {
+    background-color: #f0db5b;
+}
+
+.card:hover {
+    animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+    20% {
+        transform: translateY(-10px);
+    }
+
+    40% {
+        transform: translateY(0px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+
+    80% {
+        transform: translateY(0px);
+    }
+
+}
+
+.card-img-top {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.card-body {
+    background-color: rgba(255, 255, 255, 0.3);
+}
