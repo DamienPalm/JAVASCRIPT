@@ -2,18 +2,18 @@ body {
     font-family: 'Ubuntu', sans-serif;
     background: repeating-linear-gradient(120deg,
             #2f2f2f,
-            #2f2f2f 50px,
-            #323232 50px,
-            #323232 100px);
+            #2f2f2f 10px,
+            #323232 10px,
+            #323232 75px);
 }
 
 .container {
     min-height: 100vh;
     background: repeating-linear-gradient(120deg,
-            #ffffff,
-            #ffffff 50px,
-            #f5f5f5 50px,
-            #f5f5f5 100px);
+            #f5f5f5,
+            #f5f5f5 10px,
+            #ffffff 10px,
+            #ffffff 75px);
 }
 
 .card {
