@@ -13,8 +13,18 @@
 
 <body>
 
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand">Navbar</a>
+        </div>
+    </nav>
+
     <div class="container p-5">
         <h1 class="text-center pt-3">Pokedex Shiny</h1>
+        <form class="d-flex position-sticky top-0" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
         <div class="d-flex row justify-content-center" id="pokedex"></div>
     </div>
 
