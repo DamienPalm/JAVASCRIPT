@@ -7,6 +7,7 @@ search.addEventListener('keyup', (e) => {
     const filteredPokemon = listPokemon.filter(poke => {
         return (poke.name.toLowerCase().includes(searchString));
     });
+    console.log(filteredPokemon);
     afficherPokemon(filteredPokemon);
 });
 
