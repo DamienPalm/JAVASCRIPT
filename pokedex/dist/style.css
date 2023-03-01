@@ -2708,6 +2708,10 @@ html {
   width: 24rem;
 }
 
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -2815,6 +2819,15 @@ body {
 
 .card {
   background-color: #f0db5b;
+}
+
+.glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.15 ease-out;
+  mix-blend-mode: hard-light;
+  background: radial-gradient(circle at 50% 0%, rgb(184, 196, 211) transparent);
 }
 
 .card:hover {
