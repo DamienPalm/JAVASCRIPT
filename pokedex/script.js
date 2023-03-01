@@ -2,12 +2,13 @@ const pokedex = document.getElementById("pokedex");
 const search = document.getElementById("search");
 let listPokemon = [];
 
+console.log(search);
 search.addEventListener('keyup', (e) => {
     const searchString = e.target.value.toLowerCase();
-    const filteredPokemon = listPokemon.filter(poke => {
-        return (poke.name.toLowerCase().includes(searchString));
+    console.log(searchString);
+    const filteredPokemon = listPokemon.toLowerCase().filter(poke => {
+        poke.name.includes(searchString)
     });
-    console.log(filteredPokemon);
     afficherPokemon(filteredPokemon);
 });
 
@@ -15,6 +16,7 @@ const fetchPokemon = async () => {
     const url = `https://pokeapi.co/api/v2/pokemon?limit=1008`;
     const res = await fetch(url);
     listPokemon = await res.json();
+    console.log(listPokemon)
     const pokemon = listPokemon.results.map((result, index) => ({
         ...result,
         id: index + 1,
@@ -31,6 +33,7 @@ const afficherPokemon = (pokemon) => {
             <p>No.${poke.id}</p>
             <h2 class="card-title text-black text-4xl font-normal">${poke.name}</h2>
         </div>
+        <div class="glow"></div>
     </div>
     `).join('')
     pokedex.innerHTML = pokemonHTML;
@@ -68,10 +71,9 @@ const afficherPopup = (poke) => {
 };
 
 const closePopup = () => {
-    const popup = document.querySelector('#popup');
+    const popup = document.getElementById('popup');
     popup.parentElement.removeChild(popup);
 }
-
 fetchPokemon();
 
 // const fetchPokemon = function () {
