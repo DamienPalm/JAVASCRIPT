@@ -1,6 +1,5 @@
 const pokedex = document.getElementById("pokedex");
 const search = document.getElementById("search");
-const card = document.querySelectorAll(".content-card")
 
 const fetchPokemon = async () => {
     const url = `https://pokeapi.co/api/v2/pokemon?limit=1008`;
@@ -23,22 +22,24 @@ const fetchPokemon = async () => {
         console.log(filteredPokemon);
         afficherPokemon(filteredPokemon);
     });
+
 };
 
 const afficherPokemon = (pokemon) => {
     const pokemonHTML = pokemon.map(poke => {
         return `
-        <div class="card w-96 bg-base-100 shadow-xl p-3" onclick="selectPokemon(${poke.id})">
+        <div class="card w-96 bg-base-100 shadow-xl p-3" onclick="selectPokemon(${poke.id})" id="card">
             <img class="rounded-t-lg" src="${poke.image}" alt="${poke.name}"/>
             <div class="card-body rounded-b-lg">
                 <p>No.${poke.id}</p>
                 <h2 class="card-title text-black text-4xl font-normal">${poke.name}</h2>
             </div>
         </div>
-        <div class ="glow"></div>
     `}).join('')
     pokedex.innerHTML = pokemonHTML;
 };
+
+
 
 const selectPokemon = async (id) => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
@@ -52,7 +53,7 @@ const afficherPopup = (poke) => {
     const image = poke.sprites['front_shiny'];
     const popup = `
     <div class="flex justify-center items-center z-20" id="popup">
-        <div class="card w-96 bg-base-100 shadow-xl p-3">
+        <div class="card w-96 bg-base-100 shadow-xl p-3" id="shiny">
             <img class="rounded-t-lg" src="${image}" alt="${poke.name}"/>
             <div class="card-body rounded-b-lg">
                 <p>No.${poke.id}</p>
@@ -69,8 +70,31 @@ const afficherPopup = (poke) => {
     </div>
     `;
     pokedex.innerHTML = popup + pokedex.innerHTML;
-};
 
+    const shiny = document.querySelectorAll("#shiny");
+
+    shiny.forEach(el => {
+        el.addEventListener("mousemove", e => {
+
+            let elRect = el.getBoundingClientRect()
+
+            let x = e.clientX - elRect.x
+            let y = e.clientY - elRect.y
+
+            let midCardWidth = elRect.width / 2
+            let midCardHeight = elRect.height / 2
+
+            let angleY = -(x - midCardWidth) / 8
+            let angleX = (y - midCardHeight) / 8
+
+            el.style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.1)`
+        })
+
+        el.addEventListener("mouseleave", () => {
+            el.style.transform = "rotateX(0) rotateY(0)"
+        })
+    })
+};
 
 const closePopup = () => {
     const popup = document.getElementById('popup');

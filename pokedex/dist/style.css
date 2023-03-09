@@ -2818,19 +2818,10 @@ body {
 }
 
 .card {
-  background-color: #f0db5b;
+  background-color: rgb(240, 220, 91);
 }
 
-.glow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: all 0.15 ease-out;
-  mix-blend-mode: hard-light;
-  background: radial-gradient(circle at 50% 0%, rgb(184, 196, 211) transparent);
-}
-
-.card:hover {
+#card:hover {
   animation: bounce 0.5s;
 }
 
@@ -2869,6 +2860,11 @@ img {
   background-color: rgba(255, 255, 255, 0.3);
   -webkit-backdrop-filter: blur(25px);
           backdrop-filter: blur(25px);
+  perspective: 1500px;
+}
+
+#shiny {
+  transition: all 0.15s ease-out;
 }
 
 @media (min-width: 768px) {
